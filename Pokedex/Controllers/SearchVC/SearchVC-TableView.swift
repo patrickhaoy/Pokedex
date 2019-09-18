@@ -8,6 +8,46 @@
 
 import UIKit
 
-class SearchVC_TableView: UITableViewDataSource {
+extension SearchVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filteredPokemon.count
+        }
+        return pokemonList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath) as! PokemonCell
+        let pokemon: Pokemon
+        if isFiltering() {
+            pokemon = filteredPokemon[indexPath.row]
+        } else {
+            pokemon = pokemonList[indexPath.row]
+        }
+        cell.pokemonName.text = pokemon.name
+        cell.pokemonNumber.text = String(pokemon.number)
+        
+        guard let url = URL(string: pokemon.imageUrl) else {
+            let image = UIImage(named: "question_mark")
+            cell.pokemonImage.image = image
+            return cell
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let image = UIImage(data: data)
+            cell.pokemonImage.image = image
+            return cell
+        } catch {
+            let image = UIImage(named: "question_mark")
+            cell.pokemonImage.image = image
+            return cell
+        }
+    }
+}
 
+extension SearchVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 }
