@@ -92,6 +92,7 @@
 		54080838232FFE7E00C17FCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5408084923301BB100C17FCD /* PokemonCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,7 +127,6 @@
 				54080821232FFB2300C17FCD /* SearchVC.swift */,
 				540808452330149800C17FCD /* SearchVC-UISearchExtension.swift */,
 				5408084B23301CAC00C17FCD /* SearchVC-TableView.swift */,
-				5408084923301BB100C17FCD /* PokemonCell.swift */,
 			);
 			path = SearchVC;
 			sourceTree = "<group>";

@@ -13,7 +13,8 @@ class SearchVC: UIViewController {
     @IBOutlet weak var pokemonTableView: UITableView!
     var pokemonList = PokemonGenerator.getPokemonArray()
     var filteredPokemon = [Pokemon]()
-    let searchController = UISearchController(searchResultsController: nil) // Change to ListVC later
+    let searchController = UISearchController(searchResultsController: nil)
+    var currentIndexPath: IndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +25,7 @@ class SearchVC: UIViewController {
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        //loadImages()
     }
-    
-//    func loadImages() {
-//        do {
-//            let data = try Data(contentsOf: url)
-//            let image = UIImage(data: data)
-//            cell.pokemonImage.image = image
-//            return cell
-//        } catch {
-//            let image = UIImage(named: "question_mark")
-//            cell.pokemonImage.image = image
-//            return cell
-//        }
-//
-//        pokemonTableView.reloadData()
-//    }
     
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true

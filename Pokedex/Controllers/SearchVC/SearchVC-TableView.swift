@@ -9,6 +9,7 @@
 import UIKit
 
 extension SearchVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
             return filteredPokemon.count
@@ -49,5 +50,16 @@ extension SearchVC: UITableViewDataSource {
 extension SearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        currentIndexPath = indexPath
+        self.performSegue(withIdentifier: "searchToProfile", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ProfileVC
+        destinationVC.pokemon = pokemonList[currentIndexPath.row]
     }
 }
