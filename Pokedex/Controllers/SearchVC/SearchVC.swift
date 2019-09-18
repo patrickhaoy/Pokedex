@@ -16,6 +16,8 @@ class SearchVC: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     var currentIndexPath: IndexPath!
     
+    var bugSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,7 +55,27 @@ class SearchVC: UIViewController {
             UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
                 sender.isSelected = !sender.isSelected
                 sender.transform = .identity
+                
+                self.bugSelected = !self.bugSelected
+                
             }, completion: nil)
+        }
+    }
+    
+    @IBAction func categorySearchTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "searchToList", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            case "searchToList":
+                let destinationVC = segue.destination as! ListVC
+                destinationVC.bugSelected = bugSelected
+                destinationVC.pokemonList = pokemonList
+            case "searchToProfile":
+                let destinationVC = segue.destination as! ProfileVC
+                destinationVC.pokemon = pokemonList[currentIndexPath.row]
+            default: break
         }
     }
 }

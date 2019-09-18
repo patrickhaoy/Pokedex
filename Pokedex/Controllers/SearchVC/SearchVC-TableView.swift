@@ -20,16 +20,15 @@ extension SearchVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-            
-            
+            cell.selectionStyle = .none
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath) as! PokemonCell
             let pokemon: Pokemon
             if isFiltering() {
-                pokemon = filteredPokemon[indexPath.row]
+                pokemon = filteredPokemon[indexPath.row-1]
             } else {
-                pokemon = pokemonList[indexPath.row]
+                pokemon = pokemonList[indexPath.row-1]
             }
             cell.pokemonName.text = pokemon.name
             cell.pokemonNumber.text = String(pokemon.number)
@@ -70,10 +69,5 @@ extension SearchVC: UITableViewDelegate {
             currentIndexPath = indexPath
             self.performSegue(withIdentifier: "searchToProfile", sender: self)
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! ProfileVC
-        destinationVC.pokemon = pokemonList[currentIndexPath.row]
     }
 }

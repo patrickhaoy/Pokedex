@@ -10,21 +10,24 @@ import UIKit
 
 class ListVC: UIViewController {
 
+    @IBOutlet weak var filteredPokemonTableView: UITableView!
+    var bugSelected: Bool!
+    var pokemonList: [Pokemon]!
+    var categoryFilteredPokemon: [Pokemon]!
+    var currentIndexPath: IndexPath!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        categoryFilterPokemon()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func categoryFilterPokemon() {
+        categoryFilteredPokemon = pokemonList.filter({( pokemon : Pokemon) -> Bool in
+            if bugSelected {
+                return pokemon.types.contains("Bug")
+            } else {
+                return true
+            }
+        })
     }
-    */
-
 }
