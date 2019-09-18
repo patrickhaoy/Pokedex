@@ -11,23 +11,23 @@ import UIKit
 class ListVC: UIViewController {
 
     @IBOutlet weak var filteredPokemonTableView: UITableView!
-    var bugSelected: Bool!
+    var typeSelected: [Bool]!
     var pokemonList: [Pokemon]!
     var categoryFilteredPokemon: [Pokemon]!
     var currentIndexPath: IndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoryFilterPokemon()
+        //categoryFilterPokemon()
     }
     
-    func categoryFilterPokemon() {
-        categoryFilteredPokemon = pokemonList.filter({( pokemon : Pokemon) -> Bool in
-            if bugSelected {
-                return pokemon.types.contains("Bug")
-            } else {
-                return true
-            }
-        })
-    }
+//    func categoryFilterPokemon() {
+//        categoryFilteredPokemon = pokemonList.filter({( pokemon : Pokemon) -> Bool in
+//            if bugSelected {
+//                return pokemon.types.contains("Bug")
+//            } else {
+//                return true
+//            }
+//        })
+//    }
 }

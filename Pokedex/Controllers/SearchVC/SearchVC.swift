@@ -16,7 +16,9 @@ class SearchVC: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     var currentIndexPath: IndexPath!
     
-    var bugSelected = false
+    var typeList = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy",
+                    "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
+    var typeSelected: [Bool]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,38 @@ class SearchVC: UIViewController {
         definesPresentationContext = true
         
         self.navigationItem.title = "Pokédex"
+    }
+    
+    @IBAction func checkBoxTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
+                sender.isSelected = !sender.isSelected
+                sender.transform = .identity
+                
+                //self.bugSelected = !self.bugSelected
+                
+            }, completion: nil)
+        }
+    }
+    
+    @IBAction func categorySearchTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "searchToList", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "searchToList":
+            let destinationVC = segue.destination as! ListVC
+            destinationVC.typeSelected = typeSelected
+            destinationVC.pokemonList = pokemonList
+        case "searchToProfile":
+            let destinationVC = segue.destination as! ProfileVC
+            destinationVC.pokemon = pokemonList[currentIndexPath.row]
+        default: break
+        }
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -45,38 +79,6 @@ class SearchVC: UIViewController {
     
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
-    }
-    
-    @IBAction func checkBoxTapped(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            
-        }) { (success) in
-            UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
-                sender.isSelected = !sender.isSelected
-                sender.transform = .identity
-                
-                self.bugSelected = !self.bugSelected
-                
-            }, completion: nil)
-        }
-    }
-    
-    @IBAction func categorySearchTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "searchToList", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-            case "searchToList":
-                let destinationVC = segue.destination as! ListVC
-                destinationVC.bugSelected = bugSelected
-                destinationVC.pokemonList = pokemonList
-            case "searchToProfile":
-                let destinationVC = segue.destination as! ProfileVC
-                destinationVC.pokemon = pokemonList[currentIndexPath.row]
-            default: break
-        }
     }
 }
 

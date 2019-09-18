@@ -23,6 +23,8 @@
 		5408084C23301CAC00C17FCD /* SearchVC-TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408084B23301CAC00C17FCD /* SearchVC-TableView.swift */; };
 		5408084E2331EF3700C17FCD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408084D2331EF3700C17FCD /* CategoryCell.swift */; };
 		540808522331F9EB00C17FCD /* ListVC-TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808512331F9EB00C17FCD /* ListVC-TableView.swift */; };
+		540808542332AB4A00C17FCD /* SearchVC-CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808532332AB4A00C17FCD /* SearchVC-CollectionView.swift */; };
+		540808562332AC4C00C17FCD /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808552332AC4C00C17FCD /* TypeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		5408084B23301CAC00C17FCD /* SearchVC-TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC-TableView.swift"; sourceTree = "<group>"; };
 		5408084D2331EF3700C17FCD /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		540808512331F9EB00C17FCD /* ListVC-TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListVC-TableView.swift"; sourceTree = "<group>"; };
+		540808532332AB4A00C17FCD /* SearchVC-CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC-CollectionView.swift"; sourceTree = "<group>"; };
+		540808552332AC4C00C17FCD /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			children = (
 				5408084923301BB100C17FCD /* PokemonCell.swift */,
 				5408084D2331EF3700C17FCD /* CategoryCell.swift */,
+				540808552332AC4C00C17FCD /* TypeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				54080821232FFB2300C17FCD /* SearchVC.swift */,
 				540808452330149800C17FCD /* SearchVC-UISearchExtension.swift */,
 				5408084B23301CAC00C17FCD /* SearchVC-TableView.swift */,
+				540808532332AB4A00C17FCD /* SearchVC-CollectionView.swift */,
 			);
 			path = SearchVC;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				540808462330149800C17FCD /* SearchVC-UISearchExtension.swift in Sources */,
+				540808562332AC4C00C17FCD /* TypeCell.swift in Sources */,
+				540808542332AB4A00C17FCD /* SearchVC-CollectionView.swift in Sources */,
 				5408084123300C4900C17FCD /* ProfileVC.swift in Sources */,
 				54080822232FFB2300C17FCD /* SearchVC.swift in Sources */,
 				5408083E23300C2300C17FCD /* ListVC.swift in Sources */,
