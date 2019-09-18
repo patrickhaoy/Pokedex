@@ -9,6 +9,6 @@
 import UIKit
 
 class TypeCell: UICollectionViewCell {
-    @IBOutlet weak var typeButton: UIButton!
     
+    @IBOutlet weak var typeButton: UIButton!
 }

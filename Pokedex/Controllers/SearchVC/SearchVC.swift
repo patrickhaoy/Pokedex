@@ -10,15 +10,14 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    var typeList = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy", "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
+    var typeSelected = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    
     @IBOutlet weak var pokemonTableView: UITableView!
     var pokemonList = PokemonGenerator.getPokemonArray()
     var filteredPokemon = [Pokemon]()
     let searchController = UISearchController(searchResultsController: nil)
     var currentIndexPath: IndexPath!
-    
-    var typeList = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy",
-                    "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
-    var typeSelected: [Bool]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +41,12 @@ class SearchVC: UIViewController {
                 sender.isSelected = !sender.isSelected
                 sender.transform = .identity
                 
-                //self.bugSelected = !self.bugSelected
-                
+                for i in 0..<self.typeList.count {
+                    if sender.currentTitle == self.typeList[i] {
+                        self.typeSelected[i] = !self.typeSelected[i]
+                        continue
+                    }
+                }
             }, completion: nil)
         }
     }

@@ -26,9 +26,9 @@ extension SearchVC: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath) as! PokemonCell
             let pokemon: Pokemon
             if isFiltering() {
-                pokemon = filteredPokemon[indexPath.row-1]
+                pokemon = filteredPokemon[indexPath.row]
             } else {
-                pokemon = pokemonList[indexPath.row-1]
+                pokemon = pokemonList[indexPath.row]
             }
             cell.pokemonName.text = pokemon.name
             cell.pokemonNumber.text = String(pokemon.number)
