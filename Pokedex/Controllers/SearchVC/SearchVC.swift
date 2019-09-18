@@ -16,7 +16,27 @@ class SearchVC: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     var currentIndexPath: IndexPath!
     
-    var bugSelected = false
+    // Bug, Grass, Dark, Ground, Dragon, Ice, Electric, Normal, Fairy, Poison, Fighting, Psychic, Fire, Rock, Flying, Steel, Ghost, Water
+//    @IBOutlet weak var bugButton: UIButton!
+//    @IBOutlet weak var grassButton: UIButton!
+//    @IBOutlet weak var darkButton: UIButton!
+//    @IBOutlet weak var groundButton: UIButton!
+//    @IBOutlet weak var dragonButton: UIButton!
+//    @IBOutlet weak var iceButton: UIButton!
+//    @IBOutlet weak var electricButton: UIButton!
+//    @IBOutlet weak var normalButton: UIButton!
+//    @IBOutlet weak var fairyButton: UIButton!
+//    @IBOutlet weak var poisonButton: UIButton!
+//    @IBOutlet weak var fightingButton: UIButton!
+//    @IBOutlet weak var psychicButton: UIButton!
+//    @IBOutlet weak var fireButton: UIButton!
+//    @IBOutlet weak var rockButton: UIButton!
+//    @IBOutlet weak var flyingButton: UIButton!
+//    @IBOutlet weak var steelButton: UIButton!
+//    @IBOutlet weak var ghostButton: UIButton!
+//    @IBOutlet weak var waterButton: UIButton!
+    var typeButtonList: [UIButton]!
+    var typeSelected: [Bool]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +49,11 @@ class SearchVC: UIViewController {
         definesPresentationContext = true
         
         self.navigationItem.title = "Pokédex"
+        
+        typeButtonList = [bugButton, grassButton, darkButton, groundButton, dragonButton, iceButton, electricButton, normalButton, fairyButton, poisonButton, fightingButton, fireButton, rockButton, flyingButton, steelButton, ghostButton, waterButton]
+        for i in 0..<typeButtonList.count {
+            typeSelected[i] = false
+        }
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -56,7 +81,12 @@ class SearchVC: UIViewController {
                 sender.isSelected = !sender.isSelected
                 sender.transform = .identity
                 
-                self.bugSelected = !self.bugSelected
+                for i in 0..<self.typeButtonList.count {
+                    if sender == self.typeButtonList[i] {
+                        self.typeSelected[i] = !self.typeSelected[i]
+                        break
+                    }
+                }
                 
             }, completion: nil)
         }
@@ -70,7 +100,7 @@ class SearchVC: UIViewController {
         switch segue.identifier {
             case "searchToList":
                 let destinationVC = segue.destination as! ListVC
-                destinationVC.bugSelected = bugSelected
+                destinationVC.typeSelected = typeSelected
                 destinationVC.pokemonList = pokemonList
             case "searchToProfile":
                 let destinationVC = segue.destination as! ProfileVC

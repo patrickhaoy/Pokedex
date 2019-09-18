@@ -47,7 +47,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyg-Km-05U">
-                                                    <rect key="frame" x="159" y="50" width="84" height="30"/>
+                                                    <rect key="frame" x="8" y="11" width="84" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Bug" image="Checkmarkempty">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -55,7 +55,39 @@
                                                     <state key="selected" image="Checkmark"/>
                                                     <connections>
                                                         <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EZs-hR-HpM"/>
-                                                        <action selector="checkboxPressed:" destination="T5E-Xg-Yve" eventType="touchUpInside" id="7U5-wZ-JrR"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V18-hI-5EJ">
+                                                    <rect key="frame" x="8" y="49" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Grass" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SYd-0R-yyU"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kj-qX-dag">
+                                                    <rect key="frame" x="8" y="87" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Dark" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bTJ-py-l2v"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDr-6c-URh">
+                                                    <rect key="frame" x="8" y="125" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Ground" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rzC-c5-pdz"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOv-dm-bZU">
@@ -66,8 +98,182 @@
                                                         <action selector="categorySearchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iUw-gS-JAe"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B65-mN-li6">
+                                                    <rect key="frame" x="89" y="11" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Dragon" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTO-3M-Sqp"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llM-bc-TuD">
+                                                    <rect key="frame" x="89" y="49" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Ice" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BgD-g1-j0S"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MO-Dx-LhJ">
+                                                    <rect key="frame" x="89" y="87" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Electric" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xPL-bG-9RP"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up1-yB-avQ">
+                                                    <rect key="frame" x="89" y="125" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Normal" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="occ-zm-Fva"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVL-wB-qNf">
+                                                    <rect key="frame" x="165" y="11" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Fairy" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u7P-a4-TuJ"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAT-8e-Q1A">
+                                                    <rect key="frame" x="165" y="49" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Poison" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uMh-ro-KN0"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ko-I3-XAr">
+                                                    <rect key="frame" x="165" y="87" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Fighting" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JQm-uB-ZnI"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBs-xv-x5d">
+                                                    <rect key="frame" x="165" y="125" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Psychic" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afY-VZ-snp"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRD-Zb-thO">
+                                                    <rect key="frame" x="242" y="11" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Fire" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfP-OI-Uis"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6z-f2-psm">
+                                                    <rect key="frame" x="242" y="49" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Rock" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wlh-Sg-whq"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKP-C2-a7J">
+                                                    <rect key="frame" x="242" y="87" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Flying" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0FK-ZD-ucW"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5Z-M4-DOB">
+                                                    <rect key="frame" x="242" y="125" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Steel" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYW-zd-9gE"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdd-s1-nOM">
+                                                    <rect key="frame" x="323" y="11" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Ghost" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACW-XK-d5a"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sff-O9-pEr">
+                                                    <rect key="frame" x="323" y="49" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Water" image="Checkmarkempty">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" image="Checkmark"/>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QN3-4R-eAq"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bugButton" destination="cyg-Km-05U" id="K1U-rd-xMQ"/>
+                                            <outlet property="darkButton" destination="4kj-qX-dag" id="4H3-PY-Y6I"/>
+                                            <outlet property="dragonButton" destination="B65-mN-li6" id="o91-j0-Oal"/>
+                                            <outlet property="electricButton" destination="4MO-Dx-LhJ" id="FRF-ZU-CG9"/>
+                                            <outlet property="fairyButton" destination="bVL-wB-qNf" id="XWO-G2-5rE"/>
+                                            <outlet property="fightingButton" destination="3ko-I3-XAr" id="phr-Vx-kFC"/>
+                                            <outlet property="fireButton" destination="TRD-Zb-thO" id="dqw-pL-Dq5"/>
+                                            <outlet property="flyingButton" destination="KKP-C2-a7J" id="j0A-NI-9UL"/>
+                                            <outlet property="ghostButton" destination="wdd-s1-nOM" id="H7h-Vv-1ni"/>
+                                            <outlet property="grassButton" destination="V18-hI-5EJ" id="te9-OV-xDD"/>
+                                            <outlet property="groundButton" destination="GDr-6c-URh" id="vfO-pN-7E3"/>
+                                            <outlet property="iceButton" destination="llM-bc-TuD" id="ltg-ic-QfS"/>
+                                            <outlet property="normalButton" destination="Up1-yB-avQ" id="3Ch-gL-jG0"/>
+                                            <outlet property="poisonButton" destination="BAT-8e-Q1A" id="8W8-TZ-V63"/>
+                                            <outlet property="psychicButton" destination="TBs-xv-x5d" id="mrf-63-Bak"/>
+                                            <outlet property="rockButton" destination="N6z-f2-psm" id="cVW-DD-bbr"/>
+                                            <outlet property="steelButton" destination="F5Z-M4-DOB" id="07F-vw-BUd"/>
+                                            <outlet property="waterButton" destination="Sff-O9-pEr" id="jBl-cB-PeM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCell" id="qNF-WH-oBK" customClass="PokemonCell" customModule="Pokedex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="217" width="414" height="44"/>
@@ -115,13 +321,30 @@
                     <tabBarItem key="tabBarItem" title="Item" id="8kF-GI-z8n"/>
                     <navigationItem key="navigationItem" id="VyY-dw-UEJ"/>
                     <connections>
+                        <outlet property="bugButton" destination="cyg-Km-05U" id="Cmy-cC-c8C"/>
+                        <outlet property="darkButton" destination="4kj-qX-dag" id="8Gm-9s-TXZ"/>
+                        <outlet property="dragonButton" destination="B65-mN-li6" id="5ic-S5-IO9"/>
+                        <outlet property="electricButton" destination="4MO-Dx-LhJ" id="eh3-AF-emm"/>
+                        <outlet property="fairyButton" destination="bVL-wB-qNf" id="VC2-Wa-os6"/>
+                        <outlet property="fightingButton" destination="3ko-I3-XAr" id="rpI-s6-Ehw"/>
+                        <outlet property="fireButton" destination="TRD-Zb-thO" id="PQh-1E-ukW"/>
+                        <outlet property="flyingButton" destination="KKP-C2-a7J" id="1dO-U3-rrK"/>
+                        <outlet property="ghostButton" destination="wdd-s1-nOM" id="EJS-c9-Jb6"/>
+                        <outlet property="grassButton" destination="V18-hI-5EJ" id="DSQ-aa-cCr"/>
+                        <outlet property="groundButton" destination="GDr-6c-URh" id="Xad-iL-pEb"/>
+                        <outlet property="iceButton" destination="llM-bc-TuD" id="D3Q-mI-E01"/>
+                        <outlet property="normalButton" destination="Up1-yB-avQ" id="M8b-SD-q5f"/>
+                        <outlet property="poisonButton" destination="BAT-8e-Q1A" id="yje-in-bk1"/>
                         <outlet property="pokemonTableView" destination="G6E-2g-nqF" id="cSx-8d-aIg"/>
+                        <outlet property="psychicButton" destination="TBs-xv-x5d" id="ioi-c2-rxv"/>
+                        <outlet property="rockButton" destination="N6z-f2-psm" id="cAp-Mn-Ih7"/>
+                        <outlet property="steelButton" destination="F5Z-M4-DOB" id="PKG-xV-eeq"/>
+                        <outlet property="waterButton" destination="Sff-O9-pEr" id="Pw3-wT-msE"/>
                         <segue destination="JzE-oc-aAb" kind="show" identifier="searchToList" id="6Aq-58-f2f"/>
                         <segue destination="Dgx-rw-wcd" kind="show" identifier="searchToProfile" id="T2R-nf-90A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="T5E-Xg-Yve" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-513.04347826086962" y="109.82142857142857"/>
         </scene>
@@ -270,7 +493,7 @@
         <image name="Checkmarkempty" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9KY-PF-zom"/>
+        <segue reference="T2R-nf-90A"/>
         <segue reference="GYd-9k-FNA"/>
     </inferredMetricsTieBreakers>
 </document>

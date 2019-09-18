@@ -11,7 +11,8 @@ import UIKit
 class ListVC: UIViewController {
 
     @IBOutlet weak var filteredPokemonTableView: UITableView!
-    var bugSelected: Bool!
+    var typeSelected: [Bool]!
+    var typeName = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy", "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
     var pokemonList: [Pokemon]!
     var categoryFilteredPokemon: [Pokemon]!
     var currentIndexPath: IndexPath!
@@ -23,11 +24,13 @@ class ListVC: UIViewController {
     
     func categoryFilterPokemon() {
         categoryFilteredPokemon = pokemonList.filter({( pokemon : Pokemon) -> Bool in
-            if bugSelected {
-                return pokemon.types.contains("Bug")
-            } else {
-                return true
+            var meetsConditions = true
+            for typeIndex in 0..<typeName.count {
+                if typeSelected[typeIndex] {
+                    meetsConditions = meetsConditions && pokemon.types.contains(typeName[typeIndex])
+                }
             }
+            return meetsConditions
         })
     }
 }
