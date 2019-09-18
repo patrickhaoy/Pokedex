@@ -26,23 +26,23 @@ extension SearchVC: UITableViewDataSource {
         }
         cell.pokemonName.text = pokemon.name
         cell.pokemonNumber.text = String(pokemon.number)
-        
         guard let url = URL(string: pokemon.imageUrl) else {
             let image = UIImage(named: "question_mark")
             cell.pokemonImage.image = image
             return cell
         }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let image = UIImage(data: data)
-            cell.pokemonImage.image = image
-            return cell
-        } catch {
-            let image = UIImage(named: "question_mark")
-            cell.pokemonImage.image = image
-            return cell
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url)
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    return
+                }
+                let image = UIImage(data: data)
+                cell.pokemonImage.image = image
+            }
         }
+        
+        return cell
     }
 }
 

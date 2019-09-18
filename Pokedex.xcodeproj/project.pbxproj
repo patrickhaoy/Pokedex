@@ -32,8 +32,8 @@
 		54080829232FFB2400C17FCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5408082B232FFB2400C17FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54080831232FFB5300C17FCD /* pokeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokeData.json; sourceTree = "<group>"; };
-		54080832232FFB5400C17FCD /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
-		54080833232FFB5400C17FCD /* PokemonGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonGenerator.swift; sourceTree = "<group>"; };
+		54080832232FFB5400C17FCD /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pokemon.swift; path = ../Resources/Pokemon.swift; sourceTree = "<group>"; };
+		54080833232FFB5400C17FCD /* PokemonGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokemonGenerator.swift; path = ../Resources/PokemonGenerator.swift; sourceTree = "<group>"; };
 		5408083D23300C2300C17FCD /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		5408084023300C4900C17FCD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		540808432330103300C17FCD /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		54080837232FFE7300C17FCD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				54080832232FFB5400C17FCD /* Pokemon.swift */,
+				54080833232FFB5400C17FCD /* PokemonGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,8 +114,6 @@
 				54080823232FFB2300C17FCD /* Main.storyboard */,
 				54080828232FFB2400C17FCD /* LaunchScreen.storyboard */,
 				54080831232FFB5300C17FCD /* pokeData.json */,
-				54080832232FFB5400C17FCD /* Pokemon.swift */,
-				54080833232FFB5400C17FCD /* PokemonGenerator.swift */,
 				54080826232FFB2400C17FCD /* Assets.xcassets */,
 				5408082B232FFB2400C17FCD /* Info.plist */,
 			);
