@@ -25,6 +25,8 @@ class SearchVC: UIViewController {
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        self.navigationItem.title = "Pokédex"
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -33,7 +35,7 @@ class SearchVC: UIViewController {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredPokemon = pokemonList.filter({( pokemon : Pokemon) -> Bool in
-            return pokemon.name.lowercased().contains(searchText.lowercased())
+            return String(pokemon.number).contains(searchText) || pokemon.name.lowercased().contains(searchText.lowercased())
         })
         
         pokemonTableView.reloadData()
@@ -41,6 +43,18 @@ class SearchVC: UIViewController {
     
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    @IBAction func checkBoxTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
+                sender.isSelected = !sender.isSelected
+                sender.transform = .identity
+            }, completion: nil)
+        }
     }
 }
 
