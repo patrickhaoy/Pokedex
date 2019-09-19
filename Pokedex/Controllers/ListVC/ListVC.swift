@@ -18,6 +18,7 @@ class ListVC: UIViewController {
     var currentIndexPath: IndexPath!
     
     var minAttackPoints, minDefensePoints, minHealthPoints: Int!
+    var isRandom: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,28 @@ class ListVC: UIViewController {
     }
     
     func categoryFilterPokemon() {
-        categoryFilteredPokemon = pokemonList
-        for i in 0..<typeSelected.count {
-            if typeSelected[i] {
-                categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.types.contains(typeList[i]) }
+        if isRandom! {
+            var remainingPokemonList: [Pokemon]  = pokemonList
+            var randomPokemonList = [Pokemon]()
+            
+            for _ in 0..<20 {
+                let randomPokemon = remainingPokemonList.randomElement()
+                randomPokemonList.append(randomPokemon!)
+                remainingPokemonList = remainingPokemonList.filter { $0.name != randomPokemon!.name }
             }
+            
+            categoryFilteredPokemon = randomPokemonList
+            
+        } else {
+            categoryFilteredPokemon = pokemonList
+            for i in 0..<typeSelected.count {
+                if typeSelected[i] {
+                    categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.types.contains(typeList[i]) }
+                }
+            }
+            categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.attack >= minAttackPoints}
+            categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.defense >= minDefensePoints}
+            categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.health >= minHealthPoints}
         }
-        categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.attack >= minAttackPoints}
-        categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.defense >= minDefensePoints}
-        categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.health >= minHealthPoints}
     }
 }

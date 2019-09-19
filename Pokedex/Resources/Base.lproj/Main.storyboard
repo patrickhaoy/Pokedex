@@ -120,6 +120,14 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-ZK-3Qs">
+                                                    <rect key="frame" x="332" y="110" width="79" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Random 20"/>
+                                                    <connections>
+                                                        <action selector="random20Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EBC-gL-dia"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -177,6 +185,7 @@
                         <outlet property="pokemonTableView" destination="G6E-2g-nqF" id="cSx-8d-aIg"/>
                         <segue destination="JzE-oc-aAb" kind="show" identifier="searchToList" id="6Aq-58-f2f"/>
                         <segue destination="Dgx-rw-wcd" kind="show" identifier="searchToProfile" id="T2R-nf-90A"/>
+                        <segue destination="JzE-oc-aAb" kind="show" identifier="random20SearchToList" id="EzW-aG-cjz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -328,6 +337,7 @@
         <image name="Checkmarkempty" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="EzW-aG-cjz"/>
         <segue reference="T2R-nf-90A"/>
         <segue reference="GYd-9k-FNA"/>
     </inferredMetricsTieBreakers>

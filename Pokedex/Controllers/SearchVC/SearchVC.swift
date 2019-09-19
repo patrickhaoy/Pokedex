@@ -79,6 +79,11 @@ class SearchVC: UIViewController {
         self.performSegue(withIdentifier: "searchToList", sender: self)
     }
     
+    @IBAction func random20Tapped(_ sender: Any) {
+        view.endEditing(true)
+        self.performSegue(withIdentifier: "random20SearchToList", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "searchToList":
@@ -89,6 +94,11 @@ class SearchVC: UIViewController {
             destinationVC.minAttackPoints = minAttackPoints
             destinationVC.minDefensePoints = minDefensePoints
             destinationVC.minHealthPoints = minHealthPoints
+            destinationVC.isRandom = false
+        case "random20SearchToList":
+            let destinationVC = segue.destination as! ListVC
+            destinationVC.pokemonList = pokemonList
+            destinationVC.isRandom = true
         case "searchToProfile":
             let destinationVC = segue.destination as! ProfileVC
             if isFiltering() {
