@@ -63,7 +63,11 @@ class SearchVC: UIViewController {
             destinationVC.pokemonList = pokemonList
         case "searchToProfile":
             let destinationVC = segue.destination as! ProfileVC
-            destinationVC.pokemon = pokemonList[currentIndexPath.row]
+            if isFiltering() {
+                destinationVC.pokemon = filteredPokemon[currentIndexPath.row-1]
+            } else {
+                destinationVC.pokemon = pokemonList[currentIndexPath.row-1]
+            }
         default: break
         }
     }
