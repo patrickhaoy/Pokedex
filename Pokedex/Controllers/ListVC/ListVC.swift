@@ -10,6 +10,7 @@ import UIKit
 
 class ListVC: UIViewController {
 
+    //test
     var typeList = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy", "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
     @IBOutlet weak var filteredPokemonTableView: UITableView!
     var typeSelected: [Bool]!
