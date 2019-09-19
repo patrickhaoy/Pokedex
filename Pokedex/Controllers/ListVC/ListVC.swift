@@ -17,6 +17,8 @@ class ListVC: UIViewController {
     var categoryFilteredPokemon: [Pokemon]!
     var currentIndexPath: IndexPath!
     
+    var minAttackPoints, minDefensePoints, minHealthPoints: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryFilterPokemon()
@@ -29,5 +31,8 @@ class ListVC: UIViewController {
                 categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.types.contains(typeList[i]) }
             }
         }
+        categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.attack >= minAttackPoints}
+        categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.defense >= minDefensePoints}
+        categoryFilteredPokemon = categoryFilteredPokemon.filter { $0.health >= minHealthPoints}
     }
 }

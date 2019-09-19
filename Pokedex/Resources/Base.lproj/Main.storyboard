@@ -96,8 +96,8 @@
                                                         <outlet property="delegate" destination="BYZ-38-t0r" id="jl5-Iv-YFP"/>
                                                     </connections>
                                                 </collectionView>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minimum Attack Points" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-ac-nxN">
-                                                    <rect key="frame" x="20" y="117" width="172" height="30"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Minimum Attack Points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-ac-nxN">
+                                                    <rect key="frame" x="14" y="90" width="172" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -106,10 +106,26 @@
                                                         <outlet property="delegate" destination="BYZ-38-t0r" id="4OY-YZ-JSu"/>
                                                     </connections>
                                                 </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Minimum Defense Points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cn6-9S-9u2">
+                                                    <rect key="frame" x="14" y="127" width="172" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Minimum Health Points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qtd-hg-XYG">
+                                                    <rect key="frame" x="14" y="158" width="172" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="minAttackPoints" destination="dZC-ac-nxN" id="gpM-WY-tLX"/>
+                                            <outlet property="minDefensePoints" destination="Cn6-9S-9u2" id="Oqs-kE-5jd"/>
+                                            <outlet property="minHealthPoints" destination="Qtd-hg-XYG" id="ue6-CC-q9L"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCell" id="qNF-WH-oBK" customClass="PokemonCell" customModule="Pokedex" customModuleProvider="target">

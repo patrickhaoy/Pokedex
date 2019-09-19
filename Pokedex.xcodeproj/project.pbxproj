@@ -26,6 +26,7 @@
 		540808542332AB4A00C17FCD /* SearchVC-CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808532332AB4A00C17FCD /* SearchVC-CollectionView.swift */; };
 		540808562332AC4C00C17FCD /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808552332AC4C00C17FCD /* TypeCell.swift */; };
 		540808592333067F00C17FCD /* SearchVC-UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808582333067F00C17FCD /* SearchVC-UITextField.swift */; };
+		5408085B23330E7D00C17FCD /* SearchVC-StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408085A23330E7D00C17FCD /* SearchVC-StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		540808532332AB4A00C17FCD /* SearchVC-CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC-CollectionView.swift"; sourceTree = "<group>"; };
 		540808552332AC4C00C17FCD /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		540808582333067F00C17FCD /* SearchVC-UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC-UITextField.swift"; sourceTree = "<group>"; };
+		5408085A23330E7D00C17FCD /* SearchVC-StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC-StringExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				540808452330149800C17FCD /* SearchVC-UISearchExtension.swift */,
 				5408084B23301CAC00C17FCD /* SearchVC-TableView.swift */,
 				540808532332AB4A00C17FCD /* SearchVC-CollectionView.swift */,
+				5408085A23330E7D00C17FCD /* SearchVC-StringExtension.swift */,
 			);
 			path = SearchVC;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				5408083E23300C2300C17FCD /* ListVC.swift in Sources */,
 				54080836232FFB5400C17FCD /* PokemonGenerator.swift in Sources */,
 				540808442330103300C17FCD /* FavoritesVC.swift in Sources */,
+				5408085B23330E7D00C17FCD /* SearchVC-StringExtension.swift in Sources */,
 				5408084C23301CAC00C17FCD /* SearchVC-TableView.swift in Sources */,
 				54080820232FFB2300C17FCD /* AppDelegate.swift in Sources */,
 				54080835232FFB5400C17FCD /* Pokemon.swift in Sources */,

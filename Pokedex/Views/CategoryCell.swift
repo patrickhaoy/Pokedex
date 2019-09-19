@@ -11,6 +11,9 @@ import UIKit
 class CategoryCell: UITableViewCell {
     
     @IBOutlet weak var minAttackPoints: UITextField!
+    @IBOutlet weak var minDefensePoints: UITextField!
+    @IBOutlet weak var minHealthPoints: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

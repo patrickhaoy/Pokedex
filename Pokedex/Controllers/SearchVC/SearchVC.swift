@@ -12,6 +12,7 @@ class SearchVC: UIViewController {
 
     var typeList = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy", "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
     var typeSelected = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    var minAttackPoints, minDefensePoints, minHealthPoints: Int!
     
     @IBOutlet weak var pokemonTableView: UITableView!
     var pokemonList = PokemonGenerator.getPokemonArray()
@@ -63,8 +64,18 @@ class SearchVC: UIViewController {
         }
     }
     
+    func getTextFields() {
+        let cell: CategoryCell = self.pokemonTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! CategoryCell
+        
+        // FIX THIS LATER
+        minAttackPoints = Int(cell.minAttackPoints.text ?? "String") ?? 0
+        minDefensePoints = Int(cell.minDefensePoints.text ?? "String") ?? 0
+        minHealthPoints = Int(cell.minHealthPoints.text ?? "String") ?? 0
+    }
+    
     @IBAction func categorySearchTapped(_ sender: Any) {
         view.endEditing(true)
+        getTextFields()
         self.performSegue(withIdentifier: "searchToList", sender: self)
     }
     
@@ -74,6 +85,10 @@ class SearchVC: UIViewController {
             let destinationVC = segue.destination as! ListVC
             destinationVC.typeSelected = typeSelected
             destinationVC.pokemonList = pokemonList
+            
+            destinationVC.minAttackPoints = minAttackPoints
+            destinationVC.minDefensePoints = minDefensePoints
+            destinationVC.minHealthPoints = minHealthPoints
         case "searchToProfile":
             let destinationVC = segue.destination as! ProfileVC
             if isFiltering() {
