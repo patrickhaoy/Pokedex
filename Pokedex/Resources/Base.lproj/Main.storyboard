@@ -96,8 +96,21 @@
                                                         <outlet property="delegate" destination="BYZ-38-t0r" id="jl5-Iv-YFP"/>
                                                     </connections>
                                                 </collectionView>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minimum Attack Points" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-ac-nxN">
+                                                    <rect key="frame" x="20" y="117" width="172" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="4OY-YZ-JSu"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="minAttackPoints" destination="dZC-ac-nxN" id="gpM-WY-tLX"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCell" id="qNF-WH-oBK" customClass="PokemonCell" customModule="Pokedex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="217" width="414" height="44"/>

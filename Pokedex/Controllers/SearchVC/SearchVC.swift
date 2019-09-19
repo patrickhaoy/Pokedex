@@ -30,9 +30,21 @@ class SearchVC: UIViewController {
         definesPresentationContext = true
         
         self.navigationItem.title = "Pokédex"
+        configureTapGesture()
+    }
+    
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SearchVC.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap() {
+        print("Handle tap was called")
+        view.endEditing(true)
     }
     
     @IBAction func checkBoxTapped(_ sender: UIButton) {
+        view.endEditing(true)
         UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             
@@ -52,6 +64,7 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func categorySearchTapped(_ sender: Any) {
+        view.endEditing(true)
         self.performSegue(withIdentifier: "searchToList", sender: self)
     }
     
