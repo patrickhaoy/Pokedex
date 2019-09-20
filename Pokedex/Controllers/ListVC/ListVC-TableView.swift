@@ -53,5 +53,6 @@ extension ListVC: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ProfileVC
         destinationVC.pokemon = categoryFilteredPokemon[currentIndexPath.row]
+        destinationVC.pokemonList = pokemonList
     }
 }

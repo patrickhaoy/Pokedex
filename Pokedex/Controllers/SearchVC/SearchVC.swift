@@ -10,12 +10,15 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    @IBOutlet weak var minHealthPoints: UITextField!
+    @IBOutlet weak var minAttackPoints: UITextField!
+    @IBOutlet weak var minDefensePoints: UITextField!
+    
     var typeList = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy", "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
     var typeSelected = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-    var minAttackPoints, minDefensePoints, minHealthPoints: Int!
     
     @IBOutlet weak var pokemonTableView: UITableView!
-    var pokemonList = PokemonGenerator.getPokemonArray()
+    var pokemonList = PokemonGenerator.getPokemonArray().sorted(by: { $0.number < $1.number })
     var filteredPokemon = [Pokemon]()
     let searchController = UISearchController(searchResultsController: nil)
     var currentIndexPath: IndexPath!
@@ -31,17 +34,15 @@ class SearchVC: UIViewController {
         definesPresentationContext = true
         
         self.navigationItem.title = "Pokédex"
-        configureTapGesture()
-    }
-    
-    private func configureTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SearchVC.handleTap))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func handleTap() {
-        print("Handle tap was called")
-        view.endEditing(true)
+        
+        //Load favorites from UserDefaults
+        if let favoritePokemonList = UserDefaults.standard.array(forKey: "FavoritePokemonList") as? [Int] {
+            for pokemon in pokemonList {
+                if favoritePokemonList.contains(pokemon.number) {
+                    pokemon.isFavorite = true
+                }
+            }
+        }
     }
     
     @IBAction func checkBoxTapped(_ sender: UIButton) {
@@ -64,18 +65,8 @@ class SearchVC: UIViewController {
         }
     }
     
-    func getTextFields() {
-        let cell: CategoryCell = self.pokemonTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! CategoryCell
-        
-        // FIX THIS LATER
-        minAttackPoints = Int(cell.minAttackPoints.text ?? "String") ?? 0
-        minDefensePoints = Int(cell.minDefensePoints.text ?? "String") ?? 0
-        minHealthPoints = Int(cell.minHealthPoints.text ?? "String") ?? 0
-    }
-    
     @IBAction func categorySearchTapped(_ sender: Any) {
         view.endEditing(true)
-        getTextFields()
         self.performSegue(withIdentifier: "searchToList", sender: self)
     }
     
@@ -91,9 +82,10 @@ class SearchVC: UIViewController {
             destinationVC.typeSelected = typeSelected
             destinationVC.pokemonList = pokemonList
             
-            destinationVC.minAttackPoints = minAttackPoints
-            destinationVC.minDefensePoints = minDefensePoints
-            destinationVC.minHealthPoints = minHealthPoints
+            destinationVC.minAttackPoints = Int(minAttackPoints.text ?? "String") ?? 0
+            destinationVC.minDefensePoints = Int(minDefensePoints.text ?? "String") ?? 0
+            destinationVC.minHealthPoints = Int(minHealthPoints.text ?? "String") ?? 0
+            
             destinationVC.isRandom = false
         case "random20SearchToList":
             let destinationVC = segue.destination as! ListVC
@@ -102,10 +94,11 @@ class SearchVC: UIViewController {
         case "searchToProfile":
             let destinationVC = segue.destination as! ProfileVC
             if isFiltering() {
-                destinationVC.pokemon = filteredPokemon[currentIndexPath.row-1]
+                destinationVC.pokemon = filteredPokemon[currentIndexPath.row]
             } else {
-                destinationVC.pokemon = pokemonList[currentIndexPath.row-1]
+                destinationVC.pokemon = pokemonList[currentIndexPath.row]
             }
+            destinationVC.pokemonList = pokemonList
         default: break
         }
     }

@@ -9,22 +9,20 @@
 import UIKit
 
 class FavoritesVC: UIViewController {
-
+    
+    var favoritePokemonNumList = UserDefaults.standard.array(forKey: "FavoritePokemonList") as! [Int]
+    var favoritePokemonList = PokemonGenerator.getPokemonArray().sorted(by: { $0.number < $1.number })
+    var currentIndexPath: IndexPath!
+    @IBOutlet weak var favoritesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoritePokemonNumList = UserDefaults.standard.array(forKey: "FavoritePokemonList") as! [Int]
+        favoritePokemonList = PokemonGenerator.getPokemonArray().sorted(by: { $0.number < $1.number })
+        favoritesTableView.reloadData()
     }
-    */
-
 }

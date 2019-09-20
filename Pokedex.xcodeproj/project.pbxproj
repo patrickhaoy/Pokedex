@@ -27,6 +27,9 @@
 		540808562332AC4C00C17FCD /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808552332AC4C00C17FCD /* TypeCell.swift */; };
 		540808592333067F00C17FCD /* SearchVC-UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540808582333067F00C17FCD /* SearchVC-UITextField.swift */; };
 		5408085B23330E7D00C17FCD /* SearchVC-StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408085A23330E7D00C17FCD /* SearchVC-StringExtension.swift */; };
+		5408085D23336AF800C17FCD /* FavoritesVC-TableVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408085C23336AF800C17FCD /* FavoritesVC-TableVIew.swift */; };
+		5408086123344AC100C17FCD /* ProfileVC-TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408086023344AC100C17FCD /* ProfileVC-TableView.swift */; };
+		5408086323344D0C00C17FCD /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408086223344D0C00C17FCD /* StatisticsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		540808552332AC4C00C17FCD /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		540808582333067F00C17FCD /* SearchVC-UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC-UITextField.swift"; sourceTree = "<group>"; };
 		5408085A23330E7D00C17FCD /* SearchVC-StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC-StringExtension.swift"; sourceTree = "<group>"; };
+		5408085C23336AF800C17FCD /* FavoritesVC-TableVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesVC-TableVIew.swift"; sourceTree = "<group>"; };
+		5408086023344AC100C17FCD /* ProfileVC-TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-TableView.swift"; sourceTree = "<group>"; };
+		5408086223344D0C00C17FCD /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 				5408084923301BB100C17FCD /* PokemonCell.swift */,
 				5408084D2331EF3700C17FCD /* CategoryCell.swift */,
 				540808552332AC4C00C17FCD /* TypeCell.swift */,
+				5408086223344D0C00C17FCD /* StatisticsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,8 +123,8 @@
 			children = (
 				5408083B23300BF600C17FCD /* SearchVC */,
 				5408083C23300C0D00C17FCD /* ListVC */,
-				540808422330101900C17FCD /* FavoritesVC */,
 				5408083F23300C2800C17FCD /* ProfileVC */,
+				540808422330101900C17FCD /* FavoritesVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				5408084023300C4900C17FCD /* ProfileVC.swift */,
+				5408086023344AC100C17FCD /* ProfileVC-TableView.swift */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				540808432330103300C17FCD /* FavoritesVC.swift */,
+				5408085C23336AF800C17FCD /* FavoritesVC-TableVIew.swift */,
 			);
 			path = FavoritesVC;
 			sourceTree = "<group>";
@@ -249,6 +258,8 @@
 				540808562332AC4C00C17FCD /* TypeCell.swift in Sources */,
 				540808542332AB4A00C17FCD /* SearchVC-CollectionView.swift in Sources */,
 				5408084123300C4900C17FCD /* ProfileVC.swift in Sources */,
+				5408086123344AC100C17FCD /* ProfileVC-TableView.swift in Sources */,
+				5408085D23336AF800C17FCD /* FavoritesVC-TableVIew.swift in Sources */,
 				54080822232FFB2300C17FCD /* SearchVC.swift in Sources */,
 				540808592333067F00C17FCD /* SearchVC-UITextField.swift in Sources */,
 				5408083E23300C2300C17FCD /* ListVC.swift in Sources */,
@@ -259,6 +270,7 @@
 				54080820232FFB2300C17FCD /* AppDelegate.swift in Sources */,
 				54080835232FFB5400C17FCD /* Pokemon.swift in Sources */,
 				5408084A23301BB100C17FCD /* PokemonCell.swift in Sources */,
+				5408086323344D0C00C17FCD /* StatisticsCell.swift in Sources */,
 				540808522331F9EB00C17FCD /* ListVC-TableView.swift in Sources */,
 				5408084E2331EF3700C17FCD /* CategoryCell.swift in Sources */,
 			);
