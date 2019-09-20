@@ -10,13 +10,6 @@ import UIKit
 
 class SearchVC: UIViewController {
 
-    @IBOutlet weak var minHealthPoints: UITextField!
-    @IBOutlet weak var minAttackPoints: UITextField!
-    @IBOutlet weak var minDefensePoints: UITextField!
-    
-    var typeList = ["Bug", "Grass", "Dark", "Ground", "Dragon", "Ice", "Electric", "Normal", "Fairy", "Poison", "Fighting", "Psychic", "Fire", "Rock", "Flying", "Steel", "Ghost", "Water"]
-    var typeSelected = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-    
     @IBOutlet weak var pokemonTableView: UITableView!
     var pokemonList = PokemonGenerator.getPokemonArray().sorted(by: { $0.number < $1.number })
     var filteredPokemon = [Pokemon]()
@@ -45,52 +38,15 @@ class SearchVC: UIViewController {
         }
     }
     
-    @IBAction func checkBoxTapped(_ sender: UIButton) {
-        view.endEditing(true)
-        UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            
-        }) { (success) in
-            UIView.animate(withDuration: 0.05, delay: 0.1, options: .curveLinear, animations: {
-                sender.isSelected = !sender.isSelected
-                sender.transform = .identity
-                
-                for i in 0..<self.typeList.count {
-                    if sender.currentTitle == self.typeList[i] {
-                        self.typeSelected[i] = !self.typeSelected[i]
-                        continue
-                    }
-                }
-            }, completion: nil)
-        }
-    }
-    
-    @IBAction func categorySearchTapped(_ sender: Any) {
-        view.endEditing(true)
-        self.performSegue(withIdentifier: "searchToList", sender: self)
-    }
-    
-    @IBAction func random20Tapped(_ sender: Any) {
-        view.endEditing(true)
-        self.performSegue(withIdentifier: "random20SearchToList", sender: self)
+    @IBAction func advancedSearchTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "searchToAdvSearch", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "searchToList":
-            let destinationVC = segue.destination as! ListVC
-            destinationVC.typeSelected = typeSelected
+        case "searchToAdvSearch":
+            let destinationVC = segue.destination as! AdvancedSearchVC
             destinationVC.pokemonList = pokemonList
-            
-            destinationVC.minAttackPoints = Int(minAttackPoints.text ?? "String") ?? 0
-            destinationVC.minDefensePoints = Int(minDefensePoints.text ?? "String") ?? 0
-            destinationVC.minHealthPoints = Int(minHealthPoints.text ?? "String") ?? 0
-            
-            destinationVC.isRandom = false
-        case "random20SearchToList":
-            let destinationVC = segue.destination as! ListVC
-            destinationVC.pokemonList = pokemonList
-            destinationVC.isRandom = true
         case "searchToProfile":
             let destinationVC = segue.destination as! ProfileVC
             if isFiltering() {

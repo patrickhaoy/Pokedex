@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SearchVC: UITextFieldDelegate {
+extension AdvancedSearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

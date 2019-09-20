@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SearchVC: UICollectionViewDataSource {
+extension AdvancedSearchVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return typeList.count
     }
