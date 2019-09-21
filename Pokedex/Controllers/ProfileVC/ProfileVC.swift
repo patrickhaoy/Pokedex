@@ -49,6 +49,8 @@ class ProfileVC: UIViewController {
             let image = UIImage(named: "question_mark")
             pokemonImage.image = image
         }
+        
+        self.navigationItem.title = "Profile"
     }
     
     @IBAction func addToFavoritesPressed(_ sender: Any) {

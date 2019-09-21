@@ -10,7 +10,7 @@ import UIKit
 
 class FavoritesVC: UIViewController {
     
-    var favoritePokemonNumList = UserDefaults.standard.array(forKey: "FavoritePokemonList") as! [Int]
+    var favoritePokemonNumList: [Int]!
     var favoritePokemonList = PokemonGenerator.getPokemonArray().sorted(by: { $0.number < $1.number })
     var currentIndexPath: IndexPath!
     @IBOutlet weak var favoritesTableView: UITableView!

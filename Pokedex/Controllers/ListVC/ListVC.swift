@@ -23,6 +23,7 @@ class ListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryFilterPokemon()
+        self.navigationItem.title = "Pokemon List"
     }
     
     func categoryFilterPokemon() {

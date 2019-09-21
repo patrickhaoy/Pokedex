@@ -18,12 +18,16 @@ class AdvancedSearchVC: UIViewController {
     var typeSelected = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     
     var pokemonList: [Pokemon]!
+    @IBOutlet weak var pokemonTypeCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        pokemonTypeCollectionView.isScrollEnabled = false;
+        self.navigationItem.title = "Category Search"
     }
     
     @objc func dismissKeyboard() {
@@ -79,6 +83,4 @@ class AdvancedSearchVC: UIViewController {
         default: break
         }
     }
-    
-    
 }
