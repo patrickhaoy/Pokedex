@@ -1,1 +1,2 @@
-# Pokedex md
+# Pokedex
+Pokedex displays a list of 800 pokemon to users and allows users to search up specific pokemon in the database. Search functionality includes search bar, search by pokemon type, and search by minimum attack/defense/health points. Clicking into specific pokemon will display a profile page of that pokemon with their full statistics breakdown. Other functionality to Pokedex includes being able to add pokemon to a favorites list and searching pokemon up on the web.
