@@ -21,7 +21,7 @@ class FavoritesVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favoritePokemonNumList = UserDefaults.standard.array(forKey: "FavoritePokemonList") as! [Int]
+        favoritePokemonNumList = UserDefaults.standard.array(forKey: "FavoritePokemonList") as? [Int]
         favoritePokemonList = PokemonGenerator.getPokemonArray().sorted(by: { $0.number < $1.number })
         favoritesTableView.reloadData()
     }

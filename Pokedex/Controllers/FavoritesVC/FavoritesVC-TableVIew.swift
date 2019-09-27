@@ -42,6 +42,10 @@ extension FavoritesVC: UITableViewDataSource {
     func convertPokemonNumToPokemon () {
         var pokemonIndex = 0
         while pokemonIndex < favoritePokemonList.count {
+            guard favoritePokemonNumList != nil else {
+                favoritePokemonNumList = []
+                return
+            }
             if !favoritePokemonNumList.contains(favoritePokemonList[pokemonIndex].number) {
                 favoritePokemonList.remove(at: pokemonIndex)
             } else {

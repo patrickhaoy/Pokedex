@@ -28,6 +28,7 @@ class AdvancedSearchVC: UIViewController {
         view.addGestureRecognizer(tap)
         pokemonTypeCollectionView.isScrollEnabled = false;
         self.navigationItem.title = "Category Search"
+        
     }
     
     @objc func dismissKeyboard() {
